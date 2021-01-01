@@ -8,15 +8,9 @@ export default class WidgetCollapsible {
     const input = document.querySelector('.widget-input')
 
     fromEvent(buttonCollapse, 'click')
-      .subscribe(() => {
+      .subscribe(function() {
         container.classList.toggle('expanded')
-        if (buttonCollapse.innerText === 'Expand') {
-          buttonCollapse.innerText = 'Collapse'
-          return
-        }
-        if (buttonCollapse.innerText === 'Collapse') {
-          buttonCollapse.innerText = 'Expand'
-        }
+        buttonCollapse.innerText = buttonCollapse.innerText === 'Expand' ? 'Collapse' : 'Expand'
       })
 
     fromEvent(input, 'click')
